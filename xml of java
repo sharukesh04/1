@@ -1,0 +1,1331 @@
+BIODATA XML 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="vertical" > 
+ 
+ 
+    <LinearLayout 
+        android:id="@+id/linearLayout1" 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        android:orientation="vertical" > 
+ 
+        <TextView 
+            android:id="@+id/textView1" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="BIO DATA" /> 
+ 
+        <TextView 
+            android:id="@+id/textView2" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="NAME:" 
+            android:textAppearance="?android:attr/textAppearanceLarge" /> 
+ 
+        <EditText 
+            android:id="@+id/editText1" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" > 
+ 
+            <requestFocus /> 
+        </EditText> 
+ 
+        <TextView 
+            android:id="@+id/textView3" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="AGE:" 
+            android:textAppearance="?android:attr/textAppearanceLarge" /> 
+ 
+        <EditText 
+            android:id="@+id/editText2" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+        <TextView 
+            android:id="@+id/textView4" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="D.No:" 
+            android:textAppearance="?android:attr/textAppearanceLarge" /> 
+ 
+        <EditText 
+            android:id="@+id/editText3" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+        <TextView 
+            android:id="@+id/textView5" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="CLASS:" 
+            android:textAppearance="?android:attr/textAppearanceLarge" /> 
+ 
+        <EditText 
+            android:id="@+id/editText4" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+ 
+ 
+ 
+ 
+        <Button 
+            android:id="@+id/button1" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:text="SUBMIT" /> 
+ 
+    </LinearLayout> 
+ 
+</LinearLayout> 
+ 
+ 
+Java code 
+ 
+package com.example.biodata; 
+ 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.EditText; 
+import android.widget.Toast; 
+ 
+public class BiodataActivity extends Activity { 
+ 
+    EditText nameInput, ageInput, dNoInput, classInput; 
+    Button submitButton; 
+ 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+ 
+        nameInput = findViewById(R.id.editText1); 
+        ageInput = findViewById(R.id.editText2); 
+        dNoInput = findViewById(R.id.editText3); 
+        classInput = findViewById(R.id.editText4); 
+        submitButton = findViewById(R.id.button1); 
+ 
+        submitButton.setOnClickListener(new View.OnClickListener() { 
+            @Override 
+            public void onClick(View v) { 
+                 
+                String name = nameInput.getText().toString(); 
+                String age = ageInput.getText().toString(); 
+                String dNo = dNoInput.getText().toString(); 
+                String studentClass = classInput.getText().toString(); 
+                Toast.makeText(BiodataActivity.this,  
+                        "Name: " + name + "\nAge: " + age + "\nD.No: " + 
+dNo + "\nClass: " + studentClass,  
+                        Toast.LENGTH_LONG).show(); 
+            } 
+        }); 
+    } 
+} 
+ 
+ 
+OUTPUT: 
+ 
+ 
+ 
+ADDITION OF TWO: 
+XML 
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="vertical" > 
+ 
+ 
+    <TextView 
+        android:id="@+id/textView1" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="70dp" 
+        android:layout_marginTop="10dp" 
+        android:text="ADDITION OF TWO" 
+        android:textColor="#FF0000" 
+        android:textSize="23dp" 
+        android:textAppearance="?android:attr/textAppearanceMedium"/> 
+ 
+    <TextView 
+        android:id="@+id/textView2" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="5dp" 
+        android:layout_marginTop="30dp" 
+        android:textSize="20dp" 
+        android:text="First No:" 
+        android:textAppearance="?android:attr/textAppearanceMedium" /> 
+    <EditText 
+        android:id="@+id/Number1" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"/> 
+ 
+    <TextView 
+        android:id="@+id/textView3" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="5dp" 
+        android:textSize="20dp" 
+        android:text="Second No" 
+        android:textAppearance="?android:attr/textAppearanceMedium" /> 
+    <EditText 
+        android:id="@+id/Number2" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"/> 
+ 
+    <Button 
+        android:id="@+id/button1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="20dp" 
+        android:text="SUM" /> 
+    <TextView 
+        android:id="@+id/textView1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="50dp" 
+        android:text="TextView"/> 
+ 
+ 
+    <GridView 
+        android:id="@+id/gridView1" 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        android:numColumns="3" > 
+ 
+    </GridView> 
+ 
+</LinearLayout> 
+ 
+JAVA 
+package com.Addoftwo; 
+ 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.widget.EditText; 
+import android.widget.Button; 
+import android.widget.TextView; 
+import android.view.View; 
+ 
+public class AddoftwoActivity extends Activity { 
+ EditText no1; 
+ EditText no2; 
+ TextView tv; 
+ Button calculate; 
+ double x=0,y=0,z=0; 
+    /** Called when the activity is first created. */ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+        initcontrols(); 
+    } 
+    private void initcontrols() 
+    { 
+     no1=(EditText)findViewById(R.id.Number1); 
+     no2=(EditText)findViewById(R.id.Number2); 
+     tv=(TextView)findViewById(R.id.textView1); 
+     calculate=(Button)findViewById(R.id.button1); 
+     calculate.setOnClickListener(new Button.OnClickListener() 
+     { 
+      public void onClick(View v) 
+      { 
+       calculate1(); 
+      } 
+     }); 
+    } 
+    private void calculate1() 
+    { 
+     x=Double.parseDouble(no1.getText().toString()); 
+     y=Double.parseDouble(no2.getText().toString()); 
+     z=x+y; 
+     tv.setText(Double.toString(z)); 
+    } 
+} 
+ 
+OUTPUT: 
+ 
+ 
+ 
+ 
+ 
+ARITHMETIC OPERATION: 
+ 
+XML 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="vertical" > 
+ 
+    <LinearLayout 
+        android:id="@+id/ll1" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_weight="1.03" 
+        android:orientation="vertical" > 
+ 
+        <TextView 
+            android:id="@+id/textView1" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="25dp" 
+            android:layout_marginTop="30dp" 
+            android:text="ARITHMETIC OPERATION" 
+            android:textSize="24dp" 
+            android:textAppearance="?android:attr/textAppearanceLarge" /> 
+ 
+        <TextView 
+            android:id="@+id/textView2" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="40dp" 
+            android:text="OPERATION1" 
+            android:textSize="24dp" 
+            android:textAppearance="?android:attr/textAppearanceMedium" /> 
+ 
+        <EditText 
+            android:id="@+id/opr1" 
+            android:layout_width="186dp" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="130dp" 
+            android:layout_marginTop="-30dp" 
+            android:ems="10" 
+            android:inputType="number" > 
+ 
+            <requestFocus /> 
+ 
+        </EditText> 
+ 
+        <TextView 
+            android:id="@+id/textView3" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginTop="25dp" 
+            android:text="OPERATION2" 
+            android:textSize="24dp" 
+            android:textAppearance="?android:attr/textAppearanceMedium" /> 
+ 
+        <EditText 
+            android:id="@+id/opr2" 
+            android:layout_width="186dp" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="130dp" 
+            android:layout_marginTop="-30dp" 
+            android:ems="10" 
+            android:inputType="number" /> 
+ 
+        <TextView 
+            android:id="@+id/textView4" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="10dp" 
+            android:layout_marginTop="30dp" 
+            android:text="RESULT" 
+            android:textSize="24dp" 
+            android:textAppearance="?android:attr/textAppearanceMedium" /> 
+ 
+        <EditText 
+            android:id="@+id/result" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="130dp" 
+            android:layout_marginTop="-35dp" 
+            android:ems="10" 
+            android:inputType="number" /> 
+ 
+ 
+        <Button 
+            android:id="@+id/add" 
+            android:layout_width="114dp" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="30dp" 
+            android:layout_marginTop="30dp" 
+            android:text="ADD" /> 
+ 
+        <Button 
+            android:id="@+id/sub" 
+            android:layout_width="116dp" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="180dp" 
+            android:layout_marginTop="-50dp" 
+            android:text="SUB" /> 
+ 
+        <Button 
+            android:id="@+id/mul" 
+            android:layout_width="115dp" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="30dp" 
+            android:layout_marginTop="30dp" 
+            android:text="MUL" /> 
+ 
+        <Button 
+            android:id="@+id/div" 
+            android:layout_width="112dp" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="180dp" 
+            android:layout_marginTop="-50dp" 
+            android:text="DIV" /> 
+ 
+    </LinearLayout> 
+ 
+</LinearLayout> 
+ 
+JAVA: 
+ 
+package com.Arith; 
+ 
+import android.app.Activity; 
+import android.os.Bundle; 
+//import android.view.Menu; 
+import android.view.View; 
+import android.view.View.OnClickListener; 
+import android.widget.Button; 
+import android.widget.EditText; 
+import android.widget.LinearLayout; 
+ 
+public class ArithActivity extends Activity implements OnClickListener{ 
+ LinearLayout ll1; 
+ Button badd,bsub,bmul,bdiv; 
+ EditText opr1,opr2,res; 
+ float op1,op2,result; 
+ String s1,s2,s3; 
+    /** Called when the activity is first created. */ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+        ll1=(LinearLayout)findViewById(R.id.ll1); 
+        opr1=(EditText)findViewById(R.id.opr1); 
+        opr2=(EditText)findViewById(R.id.opr2); 
+        res=(EditText)findViewById(R.id.result); 
+        badd=(Button)findViewById(R.id.add); 
+        bsub=(Button)findViewById(R.id.sub); 
+        bmul=(Button)findViewById(R.id.mul); 
+        bdiv=(Button)findViewById(R.id.div); 
+        badd.setOnClickListener(this); 
+        bsub.setOnClickListener(this); 
+        bmul.setOnClickListener(this); 
+        bdiv.setOnClickListener(this); 
+    } 
+    //public boolean OnCreateOptionsMenu(Menu menu){ 
+     //getMenuInflater().inflate(menuRes, menu) 
+     //return true; 
+    //} 
+    public void onClick(View v){ 
+     s1=opr1.getText().toString(); 
+     s2=opr2.getText().toString(); 
+     op1=Float.parseFloat(s1); 
+     op2=Float.parseFloat(s2); 
+     switch(v.getId()) 
+     { 
+     case R.id.add: 
+      calculation("+"); 
+      break; 
+     case R.id.sub: 
+      calculation("-"); 
+      break; 
+     case R.id.mul: 
+      calculation("*"); 
+      break; 
+     case R.id.div: 
+      calculation("/"); 
+      break; 
+     } 
+     res.setText(s3); 
+} 
+    public String calculation(String op){ 
+     if(op.equals("+")) 
+      result=op1+op2; 
+     else if(op.equals("-")) 
+      result=op1-op2; 
+     else if(op.equals("*")) 
+      result=op1*op2; 
+     else if(op.equals("/")) 
+      result=op1/op2; 
+     s3=Float.toString(result); 
+     return s3; 
+    } 
+} 
+ 
+OUTPUT: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+STUDENT MARK SHEET: 
+Xml 
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="vertical" > 
+ 
+    <LinearLayout 
+        android:id="@+id/linearLayout1" 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        android:orientation="vertical" > 
+ 
+        <EditText 
+            android:id="@+id/r" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content"  
+            android:ems="10" 
+            android:inputType="text" 
+            android:hint="Enter RollNo:"> 
+ 
+            <requestFocus /> 
+ 
+        </EditText> 
+ 
+        <EditText 
+            android:id="@+id/m1" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content"  
+            android:ems="10" 
+            android:inputType="text" 
+            android:hint="Mark1"/> 
+ 
+        <EditText 
+            android:id="@+id/m2" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:ems="10" 
+            android:inputType="text" 
+            android:hint="Mark2" /> 
+ 
+        <EditText 
+            android:id="@+id/m3" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:ems="10" 
+            android:inputType="text" 
+            android:hint="Mark3" /> 
+ 
+        <EditText 
+            android:id="@+id/m4" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:ems="10" 
+            android:inputType="text" 
+            android:hint="Mark4" /> 
+ 
+        <Button 
+            android:id="@+id/btn" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Submit" /> 
+ 
+        <TextView 
+            android:id="@+id/tot" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Total Mark:" 
+            android:textSize="30dp" /> 
+ 
+ 
+        <TextView 
+            android:id="@+id/per" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Percentage:" 
+            android:textSize="30dp" /> 
+ 
+        <TextView 
+            android:id="@+id/res" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Result:" 
+            android:textSize="30dp" /> 
+ 
+        <TextView 
+            android:id="@+id/gra" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Grade:" 
+            android:textSize="30dp" /> 
+ 
+    </LinearLayout> 
+ 
+</LinearLayout> 
+ 
+JAVA 
+package com.StudentMarksheet; 
+ 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.EditText; 
+import android.widget.TextView; 
+ 
+public class StudentMarksheetActivity extends Activity { 
+ EditText r,m1,m2,m3,m4; 
+ Button btn; 
+ TextView tot,per,res,gra; 
+    /** Called when the activity is first created. */ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+         
+        r=(EditText)findViewById(R.id.r); 
+        m1=(EditText)findViewById(R.id.m1); 
+        m2=(EditText)findViewById(R.id.m2); 
+        m3=(EditText)findViewById(R.id.m3); 
+        m4=(EditText)findViewById(R.id.m4); 
+        btn=(Button)findViewById(R.id.btn); 
+        tot=(TextView)findViewById(R.id.tot); 
+        per=(TextView)findViewById(R.id.per); 
+        res=(TextView)findViewById(R.id.res); 
+        gra=(TextView)findViewById(R.id.gra); 
+        btn.setOnClickListener(new View.OnClickListener() { 
+    
+   public void onClick(View view) { 
+    // TODO Auto-generated method stub 
+    double 
+num1=Double.parseDouble(m1.getText().toString()); 
+    double 
+num2=Double.parseDouble(m2.getText().toString()); 
+    double 
+num3=Double.parseDouble(m3.getText().toString()); 
+    double 
+num4=Double.parseDouble(m4.getText().toString()); 
+    double total=num1+num2+num3+num4; 
+    tot.setText("Total Marks is:"+total); 
+     
+    double percentage=total/4; 
+    per.setText("Percentage is:"+percentage); 
+     
+    if(num1>40&&num2>40&&num3>40&&num4>40){ 
+     res.setText("Result is:Pass"); 
+    }else{ 
+     res.setText("Result is:Fail"); 
+    } 
+    String grades; 
+    if(percentage>=90){ 
+     grades="A"; 
+    } 
+    else if(percentage>=80){ 
+     grades="B"; 
+    } 
+    else if(percentage>=70){ 
+     grades="C"; 
+    } 
+    else if(percentage>=60){ 
+     grades="D"; 
+    } 
+    else{ 
+     grades="F"; 
+    } 
+    gra.setText("Grade is:"+grades); 
+   } 
+  }); 
+    } 
+} 
+ 
+ 
+ 
+ 
+CHECKBOX: 
+XML 
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="vertical" > 
+ 
+    <LinearLayout 
+        android:id="@+id/linearLayout1" 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        android:orientation="vertical" 
+        android:padding="16dp" > 
+ 
+        <CheckBox 
+            android:id="@+id/checkBox1" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Option1" /> 
+ 
+        <CheckBox 
+            android:id="@+id/checkBox2" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Option2" /> 
+ 
+        <CheckBox 
+            android:id="@+id/checkBox3" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Option3" /> 
+ 
+        <Button 
+            android:id="@+id/btnSubmit" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Submit" /> 
+ 
+ 
+    </LinearLayout> 
+ 
+</LinearLayout> 
+ 
+JAVA 
+package com.Checkbox; 
+ 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.CheckBox; 
+import android.widget.Toast; 
+ 
+public class CheckboxActivity extends Activity { 
+ private CheckBox checkBox1,checkBox2,checkBox3; 
+ private Button btnSubmit; 
+    /** Called when the activity is first created. */ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+         
+        checkBox1=(CheckBox)findViewById(R.id.checkBox1); 
+        checkBox2=(CheckBox)findViewById(R.id.checkBox2); 
+        checkBox3=(CheckBox)findViewById(R.id.checkBox3); 
+        btnSubmit=(Button)findViewById(R.id.btnSubmit); 
+        btnSubmit.setOnClickListener(new View.OnClickListener() { 
+    
+   public void onClick(View v) { 
+    // TODO Auto-generated method stub 
+    String message="Selected options:"; 
+    if(checkBox1.isChecked()){ 
+     message+="Option1"; 
+    } 
+    if(checkBox2.isChecked()){ 
+     message+="Option2"; 
+    } 
+    if(checkBox3.isChecked()){ 
+     message+="Option3"; 
+    } 
+    if(message.equals("Selected options:")){ 
+     Toast.makeText(CheckboxActivity.this,"No 
+options selected", Toast.LENGTH_SHORT).show(); 
+    } 
+    else 
+    { 
+     Toast.makeText(CheckboxActivity.this, 
+message,Toast.LENGTH_SHORT).show(); 
+    } 
+   } 
+  }); 
+    } 
+} 
+ 
+OUTPUT: 
+ 
+ 
+ 
+ 
+ 
+ 
+RADIOBUTTON: 
+XML 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"> 
+ 
+    <!-- RadioGroup to contain the RadioButtons --> 
+    <RadioGroup 
+        android:id="@+id/radioGroup1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:orientation="vertical"> 
+ 
+        <!-- RadioButtons inside the RadioGroup --> 
+        <RadioButton 
+            android:id="@+id/radio0" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Apple" /> 
+ 
+        <RadioButton 
+            android:id="@+id/radio1" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Orange" /> 
+ 
+        <RadioButton 
+            android:id="@+id/radio2" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="Grapes" /> 
+    </RadioGroup> 
+ 
+    <!-- ImageView to display the selected image --> 
+    <ImageView 
+        android:id="@+id/imageView1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/radioGroup1" 
+        android:layout_marginTop="20dp" 
+        android:src="@drawable/grapes" /> 
+</RelativeLayout> 
+ 
+JAVA: 
+package Radio.com; 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.widget.ImageView; 
+import android.widget.RadioGroup; 
+ 
+public class RadioActivity extends Activity { 
+ 
+    RadioGroup rg1; 
+    ImageView img1; 
+    Integer[] photos = {R.drawable.apple, R.drawable.orange, R.drawable.grapes}; 
+ 
+    /** Called when the activity is first created. */ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+ 
+        img1 = (ImageView) findViewById(R.id.imageView1); 
+        rg1 = (RadioGroup) findViewById(R.id.radioGroup1); 
+ 
+        // Set a listener to detect when a RadioButton is checked 
+        rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { 
+            public void onCheckedChanged(RadioGroup group, int checkedId) { 
+                // Check which radio button is selected and change the image 
+                switch (checkedId) { 
+                    case R.id.radio0: 
+                        img1.setImageResource(photos[0]);  // Apple 
+                        break; 
+                    case R.id.radio1: 
+                        img1.setImageResource(photos[1]);  // Orange 
+                        break; 
+                    case R.id.radio2: 
+                        img1.setImageResource(photos[2]);  // Grapes 
+                        break; 
+                } 
+            } 
+        }); 
+    } 
+} 
+ 
+(NOTE: WE SHOULD ADD THE IMAGES INTO THE RES/DRAWABLES hdpi/images that we download 
+from internet) 
+ 
+Output: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Text changing colours and styles: 
+ 
+Xml: 
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="vertical"> 
+ 
+<LinearLayout 
+        android:id="@+id/linearLayout1" 
+        android:layout_width="match_parent" 
+android:layout_height="wrap_content" 
+        android:layout_weight="0.79" 
+        android:orientation="vertical"> 
+ 
+<EditText 
+            android:id="@+id/editText1" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content"> 
+ 
+<requestFocus /> 
+</EditText> 
+ 
+<Button 
+            android:id="@+id/button1" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+android:text="normal" 
+            android:onClick="send"/> 
+ 
+<Button 
+            android:id="@+id/button2" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+android:text="Bold" /> 
+ 
+<Button 
+            android:id="@+id/button3" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+android:text="Italic" /> 
+<Button 
+            android:id="@+id/buttonRed" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+android:text="red" /> 
+<Button 
+            android:id="@+id/buttonGreen" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+android:text="green" /> 
+<Button 
+            android:id="@+id/buttonBlue" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+android:text="Blue" /> 
+ 
+<TextView 
+            android:id="@+id/textView1" 
+ 
+            android:layout_width="wrap_content" 
+             android:layout_height="wrap_content" 
+ 
+            android:text="" /> 
+ 
+<TextView 
+            android:id="@+id/textView2" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="" /> 
+ 
+<TextView 
+            android:id="@+id/textView3" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:text="" /> 
+ 
+</LinearLayout> 
+ 
+</LinearLayout> 
+ 
+ 
+ 
+ 
+ 
+JAVA: 
+ 
+ 
+ 
+package com.Text; 
+ 
+import android.app.Activity; 
+import android.graphics.Color; 
+import android.graphics.Typeface; 
+import android.os.Bundle; 
+import android.text.SpannableString; 
+import android.text.style.ForegroundColorSpan; 
+import android.text.style.StyleSpan; 
+import android.text.style.UnderlineSpan; 
+import android.view.View; 
+import android.view.View.OnClickListener; 
+import android.widget.EditText; 
+import android.widget.TextView; 
+ 
+public class TextActivity extends Activity { 
+    TextView t1, t2, t3; 
+    EditText et; 
+ 
+    /** Called when the activity is first created. */ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+ 
+        t1 = (TextView) findViewById(R.id.textView1); 
+        t2 = (TextView) findViewById(R.id.textView2); 
+        t3 = (TextView) findViewById(R.id.textView3); 
+        et = (EditText) findViewById(R.id.editText1); 
+ 
+        handleClick hc = new handleClick(); 
+        findViewById(R.id.button1).setOnClickListener(hc); 
+        findViewById(R.id.button2).setOnClickListener(hc); 
+        findViewById(R.id.button3).setOnClickListener(hc); 
+        findViewById(R.id.buttonRed).setOnClickListener(hc); 
+        findViewById(R.id.buttonBlue).setOnClickListener(hc); 
+        findViewById(R.id.buttonGreen).setOnClickListener(hc); 
+         
+    } 
+ 
+    private class handleClick implements OnClickListener { 
+        public void onClick(View args0) { 
+            String samp = et.getText().toString(); 
+            SpannableString spanString = new SpannableString(samp); 
+ 
+            if (args0.getId() == R.id.button1) { 
+                // Underline 
+                spanString.setSpan(new UnderlineSpan(), 0, 
+spanString.length(), 0); 
+                t1.setText(spanString); 
+            } 
+ 
+            if (args0.getId() == R.id.button2) { 
+                // Bold 
+                spanString.setSpan(new StyleSpan(Typeface.BOLD), 0, 
+spanString.length(), 0); 
+                t2.setText(spanString); 
+            } 
+ 
+            if (args0.getId() == R.id.button3) { 
+                // Italic 
+                spanString.setSpan(new StyleSpan(Typeface.ITALIC), 0, 
+spanString.length(), 0); 
+                t3.setText(spanString); 
+            } 
+ 
+            if (args0.getId() == R.id.buttonRed) { 
+                // Change color to Red 
+                spanString.setSpan(new ForegroundColorSpan(Color.RED), 0, 
+spanString.length(), 0); 
+                t1.setText(spanString); 
+            } 
+ 
+            if (args0.getId() == R.id.buttonBlue) { 
+                // Change color to Blue 
+                spanString.setSpan(new ForegroundColorSpan(Color.BLUE), 0, 
+spanString.length(), 0); 
+                t2.setText(spanString); 
+            } 
+ 
+            if (args0.getId() == R.id.buttonGreen) { 
+                // Change color to Green 
+                spanString.setSpan(new ForegroundColorSpan(Color.GREEN), 0, 
+spanString.length(), 0); 
+                t3.setText(spanString); 
+            } 
+ 
+            
+        } 
+    } 
+} 
+ 
+ 
+ 
+OUTPUT: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BACKGROUND COLOURS: 
+ 
+XML: 
+ 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+     xmlns:tools="http://schemas.android.com/tools" 
+     android:layout_width="match_parent" 
+     android:layout_height="match_parent" 
+     android:id="@+id/mainlayout" 
+     tools:context=".menu"> 
+<TextView android:id="@+id/textView1" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:layout_alignParentLeft="true" 
+    android:layout_alignParentTop="true" 
+    android:layout_marginLeft="105dp" 
+    android:layout_marginTop="99dp" 
+    android:text="Menu Example "/> 
+ 
+</RelativeLayout> 
+ 
+JAVA: 
+package com.Colours; 
+ 
+ 
+import android.os.Bundle; 
+import android.app.Activity; 
+import android.graphics.Color; 
+import android.view.Menu; 
+import android.view.MenuItem; 
+import android.view.View; 
+import android.widget.TextView; 
+ 
+ 
+public class ColoursActivity extends Activity { 
+View ob1; 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+        ob1 = (View) findViewById(R.id.mainlayout); 
+    } 
+    @Override 
+ 
+    public boolean onCreateOptionsMenu(Menu menu) { 
+    // Inflate the menu; this adds items to the action bar if it is 
+present. 
+    getMenuInflater().inflate(R.menu.menu, menu); 
+    return true; 
+    } 
+ 
+    public boolean onOptionsItemSelected(MenuItem a){ 
+    int id = a.getItemId(); 
+ 
+    if (a.getTitle().toString().equals("Red")) 
+    ob1.setBackgroundColor(Color.RED); 
+ 
+    else if(a.getTitle().toString().equals("Green")) 
+    ob1.setBackgroundColor(Color.GREEN); 
+      
+    else if(a.getTitle().toString().equals("Blue")) 
+    ob1.setBackgroundColor(Color.BLUE); 
+ 
+    else if(a.getTitle().toString().equals("Cyan")) 
+    ob1.setBackgroundColor(Color.CYAN); 
+ 
+    else if(a.getTitle().toString().equals("Gray")) 
+    ob1.setBackgroundColor(Color.GRAY); 
+ 
+    else if (a.getTitle().toString().equals("Black")) 
+    ob1.setBackgroundColor(Color.BLACK); 
+ 
+    else if(a.getTitle().toString().equals("White")) 
+    ob1.setBackgroundColor(Color.WHITE); 
+ 
+    return super.onOptionsItemSelected(a); 
+} 
+} 
+OUTPUT: 
+Image manipulation: 
+package com.imagemanu; 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.content.Context;  
+import android.graphics.Bitmap;  
+import android.graphics.BitmapFactory;  
+import android.graphics.Canvas;  
+import android.graphics.Color;  
+import android.graphics.Paint;  
+import android.graphics.Rect;  
+import android.view.View;  
+public class animate extends View{  
+Bitmap bm;  
+int x,y;  
+public animate(Context context)  
+{  
+super(context);  
+bm=BitmapFactory.decodeResource(getResources(), R.drawable.apple);  
+x = 0; y = 0;  
+}  
+@Override  
+protected void onDraw(Canvas canvas) {  
+// TODO Auto-generated method stub  
+super.onDraw(canvas);  
+Rect myrect = new Rect(0, 0, canvas.getWidth(),canvas.getHeight()/2);  
+Paint pa = new Paint();  
+pa.setColor(Color.MAGENTA);  
+pa.setStyle(Paint.Style.STROKE);  
+canvas.drawRect(myrect, pa);  
+if (x < canvas.getWidth())  
+{  
+x += 10;  
+}  
+else  
+{  
+x = 0;  
+}  
+if (y < canvas.getHeight())  
+{  
+y += 10;  
+}  
+else  
+{  
+y = 0;  
+}  
+canvas.drawBitmap(bm, x, y, new Paint());  
+invalidate(); 
+}  
+}  
+ 
+ 
+ 
+ main java  
+ 
+ 
+package com.imagemanu; 
+ 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.view.Menu;  
+ 
+ 
+public class ImagemanuActivity extends Activity { 
+animate var;  
+    /** Called when the activity is first created. */ 
+    @Override 
+    public void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+        var=new animate(this);  
+        setContentView(var);  
+        }  
+        @Override  
+        public boolean onCreateOptionsMenu(Menu menu) {  
+        // Inflate the menu; this adds items to the action bar if it is present.  
+        getMenuInflater().inflate(R.drawable.apple, menu);  
+        return true;  
+        }  
+} 
+xml code  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+xmlns:tools="http://schemas.android.com/tools"  
+android:layout_width="match_parent"  
+android:layout_height="match_parent"  
+tools:context=".MainActivity" >  
+</RelativeLayout>  
+implicit Intent 
+package com.intent; 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.content.Intent; 
+import android.net.Uri; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.EditText; 
+import android.widget.Toast; 
+public class IntentActivity extends Activity { 
+private EditText editText1; 
+private Button button1; 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main);  // Ensure this matches your XML filename 
+ 
+        // Initialize UI elements 
+        editText1 = (EditText)findViewById(R.id.editText1); 
+        button1 = (Button)findViewById(R.id.button1); 
+ 
+        if (editText1 == null || button1 == null) { 
+            Toast.makeText(this, "UI elements not found!", Toast.LENGTH_LONG).show(); 
+            return; // Exit if UI is not correctly loaded 
+        } 
+ 
+        button1.setOnClickListener(new View.OnClickListener() { 
+            public void onClick(View v) { 
+                String url = editText1.getText().toString().trim(); 
+ 
+                if (url.isEmpty()) { 
+                    Toast.makeText(IntentActivity.this, "Please enter a URL", Toast.LENGTH_SHORT).show(); 
+                    return; 
+                } 
+ 
+                // Ensure the URL starts with "http://" or "https://" 
+                if (!url.startsWith("http://") && !url.startsWith("https://")) { 
+                    url = "http://" + url; 
+                } 
+ 
+                try { 
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url)); 
+                    startActivity(intent); 
+                } catch (Exception e) { 
+                    Toast.makeText(IntentActivity.this, "Invalid URL or No Browser Found!", 
+Toast.LENGTH_SHORT).show(); 
+                } 
+            } 
+        }); 
+    } 
+} 
+ 
+ 
+<uses-permission android:name="android.permission.INTERNET"/> 
+ add this syntax in the manifest 
+ 
+ 
+Explicit Intent 
+ 
+package com.explicit; 
+ 
+import android.app.Activity; 
+import android.content.Intent; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.Button; 
+ 
+public class Explicit1Activity extends Activity { 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.main); 
+ 
+        Button button = (Button) findViewById(R.id.button1); 
+        button.setOnClickListener(new View.OnClickListener() { 
+            public void onClick(View v) { 
+                // Navigate to Second Activity 
+                Intent intent = new Intent(Explicit1Activity.this, secondactivity.class); 
+                startActivity(intent); 
+            } 
+        }); 
+    } 
+} 
+ 
+Activity 2 Explicit Intent 
+ 
+ package com.explicit; 
+ 
+import android.app.Activity; 
+import android.os.Bundle; 
+import android.widget.TextView; 
+ 
+public class secondactivity extends Activity { 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.second); 
+    } 
+} 
+ 
+Android Manifest 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+    package="com.explicit" 
+    android:versionCode="1" 
+    android:versionName="1.0" > 
+ 
+    <uses-sdk android:minSdkVersion="10" /> 
+ 
+    <application 
+        android:icon="@drawable/ic_launcher" 
+        android:label="@string/app_name" > 
+        <activity 
+            android:name=".Explicit1Activity" 
+            android:label="@string/app_name" > 
+            <intent-filter> 
+                <action android:name="android.intent.action.MAIN" /> 
+ 
+                <category android:name="android.intent.category.LAUNCHER" /> 
+            </intent-filter> 
+        </activity> 
+        <activity android:name=".SecondActivity" /> 
+    </application> 
+ 
+</manifest> 
+ 
